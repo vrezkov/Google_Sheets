@@ -1,0 +1,6 @@
+  let allTriggers = ScriptApp.getProjectTriggers();
+  if (allTriggers) {
+    for (let i = 0; i < allTriggers.length; i++) {
+      ScriptApp.deleteTrigger(allTriggers[i]);
+    };
+  };
