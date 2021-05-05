@@ -7,14 +7,14 @@ function onChange(e) {
 }
 
 function convertToNum(){
-  let range = SpreadsheetApp.getActiveSheet().getRange("A1:A");
+  let range = SpreadsheetApp.getActiveSheet().getRange('A1:A');
   let cells = range.getValues();
   let numRows = range.getNumRows();
   let numCols = range.getNumColumns();
   for (let i = 0; i < numRows; i++) {
     for (let j = 0; j < numCols; j++) {
-      if (cells[i][j] === 'some_string') {
-        cells[i][j] = '=""&row()-1'; // 1 cell down
+      if (cells[i][j] === 'string_to_replace') {
+        cells[i][j] = '=""&row()-1';
       }
     }
   }
