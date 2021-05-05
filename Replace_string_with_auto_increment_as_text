@@ -21,3 +21,19 @@ function convertToNum(){
   range.setValues(cells);
   range.setValues(range.getValues());
 };
+
+
+Another variant
+
+function createTrigger() {
+  let sheet = SpreadsheetApp.getActive();
+  ScriptApp.newTrigger('convertToNum').forSpreadsheet(sheet).onEdit().create();
+}
+
+function convertToNum(e) {
+  if (e.range.getColumn() === 1 && e.range.getRow() !== 1){
+    if (e.range.getValue() === 'some_string_to_replace' || e.range.getValue() !== '' && e.range.getValue() !== e.range.getRow()-1) {
+      e.range.setValue(e.range.getRow()-1);
+    }
+  }
+}
