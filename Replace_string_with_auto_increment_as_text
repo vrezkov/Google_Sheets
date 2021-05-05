@@ -1,9 +1,6 @@
-function onChange(e) {
-  let ss = SpreadsheetApp.getActive();
-  ScriptApp.newTrigger('convertToNum')
-  .forSpreadsheet(ss)
-  .onChange()
-  .create();
+function createTrigger() {
+  let sheet = SpreadsheetApp.getActive();
+  ScriptApp.newTrigger('convertToNum').forSpreadsheet(sheet).onChange().create();
 }
 
 function convertToNum(){
