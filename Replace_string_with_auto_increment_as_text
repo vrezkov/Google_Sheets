@@ -11,12 +11,13 @@ function convertToNum(){
   for (let i = 0; i < numRows; i++) {
     for (let j = 0; j < numCols; j++) {
       if (cells[i][j] === 'string_to_replace') {
-        cells[i][j] = '=""&row()-1';
+        //cells[i][j] = '=""&row()-1';
+        cells[i][j] = cellCurNum;
       }
     }
   }
   range.setValues(cells);
-  range.setValues(range.getValues());
+  //range.setValues(range.getValues());
 };
 
 
